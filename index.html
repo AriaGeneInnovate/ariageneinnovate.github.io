@@ -1,6 +1,309 @@
 <!DOCTYPE html>
 <html lang="en">
+<head<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AriaGene Innovate | AI-Driven Genomic Solutions for Precision Health</title>
+    <meta name="description" content="AriaGene Innovate pioneers AI-driven genomic interpretation and clinical diagnostics, leveraging advanced statistical genetics for transformative healthcare solutions.">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #0A2E5A; /* Deeper, more sophisticated blue */
+            --secondary-blue: #1A5276; /* Mid-range blue */
+            --accent-teal: #00A6B4; /* A vibrant but professional accent color */
+            --text-dark: #2c3e50; /* Darker grey for body text */
+            --text-light: #7f8c8d; /* Lighter grey for secondary text */
+            --background-light: #ecf0f1; /* Very light grey background */
+            --container-bg: #ffffff;
+            --border-color: #e4e6eb; /* Soft border color */
+            --shadow-light: rgba(0, 0, 0, 0.05);
+            --shadow-medium: rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.7; /* Slightly more spacious line height */
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-light);
+            color: var(--text-dark);
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            padding: 50px 0; /* More vertical padding for overall page */
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased; /* Smoother fonts */
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 1000px; /* Wider container */
+            width: 90%;
+            padding: 0; /* Padding handled by sections */
+            background: var(--container-bg);
+            border-radius: 15px; /* More rounded corners */
+            box-shadow: 0 15px 40px var(--shadow-medium); /* More pronounced shadow */
+            overflow: hidden;
+        }
+
+        /* --- Header / Hero Section --- */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            color: #ffffff;
+            padding: 60px 40px;
+            text-align: center;
+            border-radius: 15px 15px 0 0; /* Only top rounded */
+        }
+        .hero img.logo {
+            max-width: 300px; /* Larger logo in hero */
+            height: auto;
+            display: block;
+            margin: 0 auto 30px;
+            background-color: rgba(255, 255, 255, 0.1); /* Subtle background for logo */
+            padding: 15px 25px;
+            border-radius: 15px; /* More rounded */
+            box-shadow: 0 5px 15px var(--shadow-light);
+        }
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.8em; /* Very large, impactful heading */
+            margin-bottom: 15px;
+            font-weight: 700;
+            letter-spacing: -1px; /* Tighter letter spacing for headings */
+        }
+        .hero p {
+            font-size: 1.5em;
+            color: rgba(255, 255, 255, 0.85); /* Slightly transparent white for tagline */
+            margin: 0 auto 20px;
+            max-width: 700px;
+            font-weight: 300; /* Lighter weight for tagline */
+        }
+
+        /* --- Main Content Sections --- */
+        .section {
+            padding: 50px 40px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .section:last-of-type {
+            border-bottom: none; /* No border for the last section */
+            border-radius: 0 0 15px 15px; /* Bottom rounded for the last section */
+        }
+        .section h2 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-blue);
+            font-size: 2.5em; /* Larger section headings */
+            margin-bottom: 25px;
+            font-weight: 700;
+            text-align: center;
+        }
+        .section p {
+            font-size: 1.15em;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+        }
+
+        /* --- Feature Grid (for Expertise & Impact) --- */
+        .feature-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px; /* Space between cards */
+            justify-content: center;
+            margin-top: 30px;
+        }
+        .feature-card {
+            flex: 1 1 calc(50% - 30px); /* Two columns on larger screens */
+            background-color: #fcfcfc;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px var(--shadow-light);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            min-width: 300px; /* Minimum width for cards */
+        }
+        .feature-card:hover {
+            transform: translateY(-8px); /* Lift effect on hover */
+            box-shadow: 0 12px 25px var(--shadow-medium);
+        }
+        .feature-card .icon {
+            font-size: 3em;
+            color: var(--accent-teal);
+            margin-bottom: 15px;
+        }
+        .feature-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.6em;
+            color: var(--secondary-blue);
+            margin-bottom: 10px;
+        }
+        .feature-card p {
+            font-size: 1em;
+            color: var(--text-light);
+        }
+
+        /* --- Call to Action / Footer --- */
+        .cta-footer {
+            background-color: var(--primary-blue);
+            color: #ffffff;
+            padding: 40px;
+            text-align: center;
+            border-radius: 0 0 15px 15px; /* Bottom corners rounded */
+        }
+        .cta-footer h2 {
+            color: #ffffff;
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        .cta-footer p {
+            font-size: 1.2em;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 30px;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-teal);
+            color: #ffffff;
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .cta-button:hover {
+            background-color: #008c99; /* Slightly darker teal on hover */
+            transform: translateY(-3px);
+            text-decoration: none; /* No underline on hover */
+        }
+
+        /* --- General Link Styling --- */
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: var(--hover-link-color);
+            text-decoration: underline;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            body {
+                padding: 20px 0;
+            }
+            .container {
+                width: 95%;
+                border-radius: 10px;
+                box-shadow: 0 8px 25px var(--shadow-medium);
+            }
+            .hero {
+                padding: 40px 20px;
+                border-radius: 10px 10px 0 0;
+            }
+            .hero img.logo {
+                max-width: 200px;
+                margin-bottom: 20px;
+            }
+            .hero h1 {
+                font-size: 2.5em;
+            }
+            .hero p {
+                font-size: 1.2em;
+            }
+            .section {
+                padding: 30px 20px;
+            }
+            .section h2 {
+                font-size: 2em;
+                margin-bottom: 20px;
+            }
+            .feature-card {
+                flex: 1 1 100%; /* Single column on small screens */
+                min-width: unset; /* Remove min-width override */
+            }
+            .cta-footer {
+                padding: 30px 20px;
+                border-radius: 0 0 10px 10px;
+            }
+            .cta-footer h2 {
+                font-size: 1.8em;
+            }
+            .cta-footer p {
+                font-size: 1em;
+            }
+            .cta-button {
+                padding: 12px 25px;
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="hero">
+            <img src="./images/ariagene_logo.jpeg" alt="AriaGene Innovate Logo" class="logo">
+            <h1>AriaGene Innovate</h1>
+            <p>Pioneering AI-driven Genomic Solutions for a Healthier Future</p>
+        </header>
+
+        <section class="section">
+            <h2>Our Vision & Mission</h2>
+            <p>At AriaGene Innovate, we are passionate about leveraging cutting-edge Artificial Intelligence to revolutionize genomic interpretation and clinical diagnostics. Our mission is to understand human biology in unprecedented ways, driving the discovery of transformative therapies to treat some of life’s most devastating diseases.</p>
+        </section>
+
+        <section class="section">
+            <h2>Key Areas of Expertise</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="icon"><i class="fas fa-brain"></i></div>
+                    <h3>AI & Machine Learning</h3>
+                    <p>Leveraging advanced AI/LLM-driven solutions for precise genomic interpretation and accelerated variant analysis.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon"><i class="fas fa-dna"></i></div>
+                    <h3>Genomics & Statistical Genetics</h3>
+                    <p>Expertise in large-scale population genomic data analysis and advanced statistical methods for causal inference.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon"><i class="fas fa-microscope"></i></div>
+                    <h3>Clinical Diagnostics & Therapeutics</h3>
+                    <p>Translating complex genomic insights into actionable diagnostic tools and novel therapeutic targets.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon"><i class="fas fa-flask"></i></div>
+                    <h3>Groundbreaking Research</h3>
+                    <p>Impactful contributions published in leading journals like Nature and Nature Medicine, advancing precision medicine.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Our Impact & Commitment</h2>
+            <p>Our foundation is built on deep expertise, evident in our work on critical areas including **female reproductive lifespan** and the intricate genetic links between ovarian aging and cancer risk. We are dedicated to translating complex scientific challenges into tangible healthcare advancements, fostering a collaborative environment where innovation thrives.</p>
+            <p>We are confident in our ability to shape the future of precision medicine, empowering every individual with insights for a healthier life, and forging strong partnerships to achieve our ambitious goals.</p>
+        </section>
+
+        <footer class="cta-footer">
+            <h2>Let's Shape the Future of Health Together</h2>
+            <p>Connect with us to explore collaboration opportunities or learn more about our transformative work.</p>
+            <a href="https://www.linkedin.com/in/saleh-shekari-phd-68416b94/" target="_blank" class="cta-button">
+                <i class="fab fa-linkedin"></i> Connect on LinkedIn
+            </a>
+            <p style="margin-top: 30px; font-size: 0.85em; color: rgba(255, 255, 255, 0.7);">
+                &copy; 2025 AriaGene Innovate. All rights reserved.
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AriaGene Innovate | AI-Driven Genomic Solutions for Precision Health</title>
