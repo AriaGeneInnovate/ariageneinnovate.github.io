@@ -59,18 +59,11 @@
         }
         .nav-content {
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-end;
             align-items: center;
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 20px;
-        }
-        .nav-logo {
-            max-width: 220px;
-            transition: transform var(--transition-speed) ease;
-        }
-        .nav-logo:hover {
-            transform: scale(1.05);
         }
         .nav-links {
             display: flex;
@@ -91,6 +84,7 @@
             font-size: 1.5em;
             color: var(--white-glow);
             cursor: pointer;
+            margin-left: 20px;
         }
 
         /* Hero Section */
@@ -362,7 +356,6 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .nav-logo { max-width: 160px; }
             .nav-links { display: none; }
             .hamburger { display: block; }
             .nav.active .nav-links {
@@ -395,7 +388,6 @@
 <body>
     <nav>
         <div class="nav-content">
-            <img src="./images/ariagene_logo.jpeg" alt="AriaGene Innovate Logo" class="nav-logo">
             <div class="nav-links">
                 <a href="#vision">Vision</a>
                 <a href="#expertise">Expertise</a>
@@ -410,7 +402,7 @@
         <div class="hero-content">
             <img src="./images/ariagene_logo.jpeg" alt="AriaGene Innovate Logo" class="logo">
             <h1>AriaGene Innovate</h1>
-            <p>Revolutionizing Precision Health with AI Genomics – Updated June 07, 2025, 09:24 AM CEST</p>
+            <p>Revolutionizing Precision Health with AI Genomics – Updated June 07, 2025, 09:59 AM CEST</p>
             <a href="#vision" class="cta-primary">Discover Our Future</a>
         </div>
     </section>
