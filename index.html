@@ -1,92 +1,500 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1a2b49">
+    <title>AriaGene Innovate | AI-Powered Precision Health</title>
+    <meta name="description" content="AriaGene Innovate leads the charge in precision health with AI-driven genomic solutions, transforming diagnostics and personalized medicine as of June 07, 2025.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        .linkedin-cover {
-            width: 1584px;
-            height: 396px;
-            background: linear-gradient(135deg, #1a2b49 0%, #2c3e50 100%);
+        :root {
+            --primary-navy: #1a2b49;
+            --secondary-blue: #00a6b4;
+            --metallic-silver: #b0bec5;
+            --white-glow: #e0f7fa;
+            --text-dark: #ffffff;
+            --text-light: #b0bec5;
+            --bg-gradient: linear-gradient(135deg, #1a2b49 0%, #2c3e50 100%);
+            --shadow-glow: 0 0 15px rgba(0, 166, 180, 0.5);
+            --transition-speed: 0.3s;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-gradient);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 43, 73, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            transition: background var(--transition-speed) ease;
+        }
+        nav.scrolled {
+            background: rgba(26, 43, 73, 0.98);
+            padding: 15px 0;
+        }
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .nav-logo {
+            max-width: 220px;
+            transition: transform var(--transition-speed) ease;
+        }
+        .nav-logo:hover {
+            transform: scale(1.05);
+        }
+        .nav-links {
+            display: flex;
+            gap: 35px;
+        }
+        .nav-links a {
+            color: var(--white-glow);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: color var(--transition-speed) ease;
+        }
+        .nav-links a:hover {
+            color: var(--secondary-blue);
+        }
+        .hamburger {
+            display: none;
+            font-size: 1.5em;
+            color: var(--white-glow);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
             position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
             overflow: hidden;
-            font-family: 'Roboto', sans-serif;
+            padding: 0 20px;
         }
-        .dna-helix {
+        .hero::before {
+            content: '';
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            opacity: 0.1;
-            width: 120%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(0, 166, 180, 0.15) 0%, transparent 70%);
+            z-index: 1;
         }
-        .content {
+        .hero-content {
             position: relative;
             z-index: 2;
-            padding: 60px;
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            height: 100%;
+            padding: 20px;
         }
-        .left-panel {
-            border-right: 2px solid #00a6b4;
-            padding-right: 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+        .hero img.logo {
+            max-width: 450px;
+            margin-bottom: 40px;
+            filter: drop-shadow(var(--shadow-glow));
+            transition: transform var(--transition-speed) ease;
         }
-        .right-panel {
-            padding-left: 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+        .hero img.logo:hover {
+            transform: scale(1.03);
         }
-        .pillar {
-            color: #ffffff;
-            font-size: 24px;
-            font-weight: 700;
-            margin: 15px 0;
-            letter-spacing: 1px;
-        }
-        .tagline {
-            color: #00a6b4;
-            font-size: 36px;
-            font-weight: 700;
+        .hero h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 5.5em;
+            font-weight: 800;
+            letter-spacing: 2px;
+            background: linear-gradient(to right, var(--white-glow), var(--secondary-blue));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 10px rgba(0, 166, 180, 0.3);
             margin-bottom: 20px;
-            text-shadow: 0 0 10px rgba(0, 166, 180, 0.5);
         }
-        .mission {
-            color: #b0bec5;
-            font-size: 18px;
-            line-height: 1.6;
+        .hero p {
+            font-size: 1.9em;
+            font-weight: 300;
+            max-width: 900px;
+            margin: 0 auto 50px;
+            color: var(--text-light);
+        }
+        .cta-primary {
+            display: inline-block;
+            background: var(--secondary-blue);
+            color: var(--text-dark);
+            padding: 18px 45px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.3em;
+            transition: all var(--transition-speed) ease;
+            box-shadow: 0 5px 15px rgba(0, 166, 180, 0.4);
+        }
+        .cta-primary:hover {
+            background: var(--white-glow);
+            color: var(--primary-navy);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 166, 180, 0.6);
+        }
+
+        /* Sections */
+        .section {
+            padding: 120px 0;
+            position: relative;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 15px;
+            margin: 30px 0;
+            overflow: hidden;
+        }
+        .section::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 166, 180, 0.1) 0%, transparent 70%);
+            z-index: 0;
+            animation: rotate 20s linear infinite;
+        }
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .section-content {
+            position: relative;
+            z-index: 1;
+        }
+        .section h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.8em;
+            font-weight: 700;
+            color: var(--white-glow);
+            text-align: center;
+            margin-bottom: 60px;
+            text-shadow: 0 0 8px rgba(0, 166, 180, 0.2);
+        }
+
+        /* Feature Grid */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 50px;
+            padding: 0 20px;
+        }
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all var(--transition-speed) ease;
+            border: 1px solid rgba(0, 166, 180, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 166, 180, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity var(--transition-speed) ease;
+        }
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 166, 180, 0.3);
+        }
+        .feature-card .icon {
+            font-size: 3.8em;
+            color: var(--secondary-blue);
+            margin-bottom: 25px;
+            transition: color var(--transition-speed) ease;
+        }
+        .feature-card:hover .icon {
+            color: var(--white-glow);
+        }
+        .feature-card h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2em;
+            font-weight: 600;
+            color: var(--white-glow);
+            margin-bottom: 15px;
+        }
+        .feature-card p {
+            font-size: 1.15em;
+            color: var(--text-light);
+        }
+
+        /* Commitment Section */
+        .commitment-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 0 20px;
+        }
+        .commitment-content p {
+            font-size: 1.25em;
+            color: var(--text-light);
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+        .commitment-content ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 30px;
+            display: grid;
+            gap: 15px;
+        }
+        .commitment-content ul li {
+            font-size: 1.25em;
+            color: var(--white-glow);
+            position: relative;
+            padding-left: 35px;
+        }
+        .commitment-content ul li::before {
+            content: '\f0c8';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--secondary-blue);
+            position: absolute;
+            left: 0;
+            font-size: 1em;
+        }
+
+        /* Footer */
+        .cta-footer {
+            background: var(--primary-navy);
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(0, 166, 180, 0.1), transparent);
+            z-index: 0;
+        }
+        .cta-footer-content {
+            position: relative;
+            z-index: 1;
+        }
+        .cta-footer h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3em;
+            font-weight: 800;
+            color: var(--white-glow);
+            margin-bottom: 25px;
+            text-shadow: 0 0 10px rgba(0, 166, 180, 0.3);
+        }
+        .cta-footer p {
+            font-size: 1.4em;
+            color: var(--text-light);
+            margin-bottom: 40px;
+        }
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            background: var(--secondary-blue);
+            color: var(--text-dark);
+            padding: 18px 50px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.3em;
+            transition: all var(--transition-speed) ease;
+            box-shadow: 0 5px 15px rgba(0, 166, 180, 0.4);
+        }
+        .cta-button i {
+            margin-right: 12px;
+        }
+        .cta-button:hover {
+            background: var(--white-glow);
+            color: var(--primary-navy);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 166, 180, 0.6);
+        }
+        .footer-bottom {
+            font-size: 0.95em;
+            color: var(--text-light);
+            margin-top: 40px;
+            opacity: 0.8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-logo { max-width: 160px; }
+            .nav-links { display: none; }
+            .hamburger { display: block; }
+            .nav.active .nav-links {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background: rgba(26, 43, 73, 0.95);
+                padding: 20px 0;
+                text-align: center;
+            }
+            .nav.active .nav-links a {
+                margin: 10px 0;
+            }
+            .hero h1 { font-size: 3.5em; }
+            .hero p { font-size: 1.5em; }
+            .hero img.logo { max-width: 300px; }
+            .cta-primary { padding: 12px 30px; font-size: 1.1em; }
+            .section { padding: 80px 0; }
+            .section h2 { font-size: 2.5em; }
+            .feature-card { padding: 30px; }
+            .commitment-content p, .commitment-content ul li { font-size: 1.1em; }
+            .cta-footer h2 { font-size: 2.2em; }
+            .cta-button { padding: 14px 40px; font-size: 1.1em; }
         }
     </style>
 </head>
 <body>
-    <div class="linkedin-cover">
-        <!-- Subtle DNA helix in background -->
-        <svg class="dna-helix" viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg">
-            <!-- Simplified DNA path with glow -->
-            <path d="M50,100 Q150,50 250,100 Q350,150 450,100" 
-                  stroke="#00a6b4" 
-                  stroke-width="2" 
-                  fill="none" 
-                  stroke-dasharray="5,5"/>
-        </svg>
-        
-        <div class="content">
-            <div class="left-panel">
-                <div class="pillar">AI INNOVATION</div>
-                <div class="pillar">GENOMIC MASTERY</div>
-                <div class="pillar">CLINICAL IMPACT</div>
-                <div class="pillar">RESEARCH EXCELLENCE</div>
+    <nav>
+        <div class="nav-content">
+            <img src="./images/ariagene_logo.jpeg" alt="AriaGene Innovate Logo" class="nav-logo">
+            <div class="nav-links">
+                <a href="#vision">Vision</a>
+                <a href="#expertise">Expertise</a>
+                <a href="#commitment">Impact</a>
+                <a href="#contact">Contact</a>
             </div>
-            
-            <div class="right-panel">
-                <div class="tagline">PIONEERING AI-DRIVEN GENOMIC SOLUTIONS</div>
-                <div class="mission">
-                    Transforming precision health through cutting-edge AI and genomic research to deliver personalized, actionable insights.
+            <div class="hamburger"><i class="fas fa-bars"></i></div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <img src="./images/ariagene_logo.jpeg" alt="AriaGene Innovate Logo" class="logo">
+            <h1>AriaGene Innovate</h1>
+            <p>Revolutionizing Precision Health with AI Genomics – Updated June 07, 2025, 09:24 AM CEST</p>
+            <a href="#vision" class="cta-primary">Discover Our Future</a>
+        </div>
+    </section>
+
+    <div class="container">
+        <section class="section" id="vision">
+            <div class="section-content">
+                <h2>Our Vision</h2>
+                <p>We envision a future where precision medicine transforms global health. At AriaGene Innovate, we harness AI and genomic science to decode human biology, delivering innovative solutions as of June 07, 2025.</p>
+            </div>
+        </section>
+
+        <section class="section" id="expertise">
+            <div class="section-content">
+                <h2>Our Expertise</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="icon"><i class="fas fa-brain"></i></div>
+                        <h3>AI Innovation</h3>
+                        <p>Advanced AI, including RAG and CAG, powers precise genomic interpretations for cutting-edge healthcare.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon"><i class="fas fa-dna"></i></div>
+                        <h3>Genomic Mastery</h3>
+                        <p>Leading-edge analysis of genomic data with sophisticated statistical techniques.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon"><i class="fas fa-microscope"></i></div>
+                        <h3>Clinical Precision</h3>
+                        <p>Accelerating diagnostics and therapeutics through AI-driven variant analysis.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon"><i class="fas fa-flask"></i></div>
+                        <h3>Research Leadership</h3>
+                        <p>Groundbreaking research shaping precision medicine, published in top journals.</p>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
+
+        <section class="section" id="commitment">
+            <div class="section-content">
+                <h2>Our Impact</h2>
+                <div class="commitment-content">
+                    <p>AriaGene Innovate redefines genomic interpretation with our Agentive Copilot AI, integrating a robust knowledge base with advanced AI techniques like RAG and CAG for unparalleled insights as of June 07, 2025.</p>
+                    <p>Our transformative applications include:</p>
+                    <ul>
+                        <li><strong>Clinical Diagnosis</strong>: Enhancing rare disease diagnostics with Whole Exome Sequencing (WES) analysis.</li>
+                        <li><strong>Personalized Predictions</strong>: Offering risk assessments for conditions like early infertility.</li>
+                        <li><strong>Specialist Insights</strong>: Providing tailored genetic data for diverse medical fields.</li>
+                    </ul>
+                    <p>We are committed to translating science into impactful healthcare advancements, fostering innovation, and building partnerships to shape the future of medicine.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="cta-footer" id="contact">
+            <div class="cta-footer-content">
+                <h2>Shape the Future with Us</h2>
+                <p>Join AriaGene Innovate to explore groundbreaking genomic solutions, updated June 07, 2025.</p>
+                <a href="https://www.linkedin.com/in/saleh-shekari-phd-68416b94/" target="_blank" class="cta-button">
+                    <i class="fab fa-linkedin"></i> Connect Now
+                </a>
+                <p class="footer-bottom">© 2025 AriaGene Innovate. All rights reserved.</p>
+            </div>
+        </footer>
     </div>
+
+    <script>
+        const nav = document.querySelector('nav');
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        hamburger.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
